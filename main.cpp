@@ -172,8 +172,10 @@ void writeDrabble(string prompt[], int randomPick, int numOfPrompts)
     string zweite = "";  //I must have two of these so one can append to the other. Or else it does weird things.
     string fileName;
     int once = 0;
+    bool found;
 
     ofstream fout;
+    ifstream fin;
 
     randPrompt(prompt, randomPick, numOfPrompts);
 
@@ -202,11 +204,20 @@ void writeDrabble(string prompt[], int randomPick, int numOfPrompts)
     do
     {
         getline(cin, fileName);
-        if (fileName == "prompts")
-            cout << "Trust me, you don't want to do that. Pick a different name: ";
-    } while (fileName == "prompts");
+        fileName = fileName + ".txt";
 
-    fileName = fileName + ".txt";
+        fin.open(fileName.c_str());
+
+        if (fin.is_open())
+        {
+            found = true;
+            cout << "Woah! Don't overwrite anything! Try again: ";
+            fin.close();
+        }
+        else
+            found = false;
+    } while (found == true);
+
     fout.open(fileName.c_str());
 
     if (fout.is_open())
