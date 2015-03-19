@@ -37,7 +37,3 @@ instead of:
       this
 
 My advice: append only from the prompt generator to avoid accidental errors. It drove me nuts trying to figure out why the append option would and wouldn't work at times. So, there you are. 
-
-A NOTE ABOUT WRITING FROM PROMPTS:
-
-I have no idea how to check--actually, it's occuring to me right now how to see if there's file under the name chosen . . . ANYWAYS, don't overwrite words. Once you write to a file, make sure you're not overwriting a file, or, better yet, copy all of your words out just as soon as you write 'em. Be intelligent. 
